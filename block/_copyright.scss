@@ -1,0 +1,24 @@
+.copyright{
+    background-color: black;
+    &-block{
+        max-width: 1170px;
+        padding: 0 15px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+        line-height: 60px;
+        &-right{
+            width: 70%;
+        }
+        &-left{
+            width: 30%;
+        }
+        
+    }
+
+}
+@media screen and (max-width:415px) {
+    .copyright{
+        display: block
+    }
+}

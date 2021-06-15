@@ -1,0 +1,116 @@
+.wrap-footer{
+    background-color:$footer-color;
+    width: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    &-form{
+        width: calc(70% - 10rem);
+        &-left{
+            display: block;
+            width: 50%;
+            float: left;
+        }
+        &-right{
+            display: block;
+            width: calc(50%);
+            float: right;
+            position: relative;
+            &-textarea{
+                &-content{
+                    position: absolute;
+                    margin: 20px;
+                    width: calc(100% - 70px);
+                    height: 100px;
+                    resize: none;
+                    overflow-y: hidden;
+                    background-color: $footer-color;
+                    color: white;
+                }
+            }
+        } 
+        &-button{
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background-color: $button-color;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }     
+        &-section{
+            position: relative;
+            margin-bottom: 50px;
+            width: calc(100% - 4rem);
+        }
+        &-title{
+            padding-bottom: 50px;
+        }  
+        &-label{
+            position: absolute;	
+            top: 0px;
+            margin-bottom: 0px;
+            left: 0%;
+            width: 	100%;
+            height: 100%;
+            pointer-events: none;
+            border-bottom: 1px solid $title-color;
+        }  
+        &-input{
+            width: 	100%;
+            height:	100%;
+            border: none;
+            padding-top: 20px;
+            background-color: $footer-color;
+            color: white;
+        }
+    }
+    &-contact{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        &-text:not(:last-child){
+            padding-bottom: 55px;
+        }
+        &-text {
+            // display: inline-block;
+            
+            & > a{
+                color: $title-color;
+                &::before{
+                    content: " | ";
+                }
+            }
+          
+        }
+           
+        &-icon{
+            // display: inline-block;
+            padding-right: 10px;
+            color: $button-color;
+         
+        }
+    }
+
+}
+
+
+@media screen and(max-width:415px) {
+    .footer{
+        display: block;
+        &-form,
+        &-contact{
+            width: 100%;
+            padding-bottom: 15px;
+        }
+    }
+    .footer-form-right-textarea-content{
+        width: 85%;
+        margin: 22px -48px;
+    }
+    .container-footer{
+        padding-bottom: 0px;
+    }
+}

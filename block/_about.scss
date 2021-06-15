@@ -1,0 +1,125 @@
+.about{
+    display: flex;
+    background: linear-gradient(
+        to bottom,
+        rgba($title-color, 0.6),
+        rgba(black, 0.8),
+    ),
+    url('/image/aboutbg.png') no-repeat center / cover;
+    height: 568px;
+    width: 100%;
+    object-fit: cover;
+    justify-content: space-between;
+    padding: 0 25px;
+    &-us,
+    &-list{
+        width: calc(50% - 1rem);
+    }
+    &-us{
+        &-image{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 5px solid $primary-color;
+            margin-bottom: 12px;
+        }
+        &-text,
+        &-title{
+            color: $primary-color;
+            padding: 10px 0;
+            text-transform: uppercase;
+        }
+        &-desc{
+            color: $text-color;
+            line-height: 1.6;
+            letter-spacing: 1.8px;
+        }
+    }
+
+    &-list{
+        &-circle{
+            width: 30px;
+            height: 30px;
+            background: $primary-color;
+            border-radius: 50%;
+            border: 5px solid $primary-color;
+            position: relative;
+            top: -10px;
+            left: 7%;
+            margin-bottom: 55px;
+            &::before{
+                content: "";
+                width: 1px;
+                height: 430px;
+                background: $primary-color;
+                position: absolute;
+                z-index: 3;
+                top: 0;
+                left: 50%;
+            }
+        }
+        &-info{
+            padding: 18px;
+            z-index: 1;
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            &-desc{
+                padding: 10px 0;
+                color: $text-color;
+            }
+            &-title{
+                color: $primary-color;
+            }
+        }
+        &-item{
+            position: relative;
+            z-index: 10;
+            display: flex;
+            padding-bottom: 50px;
+            &-image{
+                &--circle{
+                    border-radius: 50%;
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border: 5px solid $primary-color;
+                    position: relative;
+                    cursor: pointer;                   
+                }
+            }
+        }
+      
+    }
+}
+@media screen and (max-width:769px) {
+    .about-list-circle{
+        left: 10%;
+    }
+    .about-list-info{
+        top: 5%;
+        left: 30%;
+    }
+    .about-list-info-desc{
+        height: 50px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (max-width:415px) {
+    .about{
+        display: block;
+        height: 100%;
+        &-us,
+        &-list{
+            width: 100%;
+        }
+        &-us{
+            padding-bottom: 25px;
+        }
+    }
+}

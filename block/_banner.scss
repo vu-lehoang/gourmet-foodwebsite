@@ -1,0 +1,134 @@
+.banner{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    background: 
+    linear-gradient(
+    to bottom,
+    rgba(black, 0.8),
+    rgba(black, 0.8),
+    ),
+    url("/image/background-banner.png") no-repeat center / cover;
+    color: white;
+    position: relative;
+    z-index: 1;
+    &-slider{
+        &-images{
+            display: flex;
+            width: 100%;
+            position: absolute;
+            left: 0%;
+            overflow: hidden;
+        }
+        &-input{
+            display: none;
+        }
+        &-image{
+            height: 100vh;
+            padding: 0 180px;
+            object-fit: cover;  
+            &::after{
+                content: "";
+                background: linear-gradient(
+                    to bottom,
+                    rgba(black, 0.8),
+                    rgba(black, 0.8),
+                );
+            }    
+        }
+        &-input{
+            display: none;
+        }
+        &-info{
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            padding: 50px;
+            text-align: center;
+            background: linear-gradient(
+                to left,
+                rgba(black, 0.6),
+                rgba(black, 0.8)
+        );
+            transform: rotate(90deg);
+                &-text{
+                    letter-spacing: 3px;
+                    line-height: 1.6;
+                    margin: 8px;
+                    font-weight: bold;
+                    &--solid{
+                        border-bottom: 1px solid white;
+                        border-left: 1px solid white;
+                        padding: 10px;
+                        font-weight: 300;  
+                        font-size: 14px;                  
+                }
+            }        
+       }
+    }
+}
+#img1:checked ~ #m1 {
+    margin-left: 0;
+}
+#img2:checked ~ #m2 {
+    margin-left: -100%;
+}
+#img3:checked ~ #m3 {
+    margin-left: -200%;
+}
+.slick{    
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    position: absolute;
+    bottom: 5%;
+    left: 40%;
+    cursor: pointer;
+    &-slider{
+        display: block;
+        height: 10px;
+        width: 50px;
+        border: solid #ddd 1px;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        margin: 5px;
+        &:hover{
+            background-color: $primary-color;
+        }
+    }
+    &-slider:hover{
+        background-color: $primary-color;
+    }
+}
+
+
+@media screen and(max-width:1025px) {
+    .banner{
+        height: 50vh;
+    }
+    .banner-slider-image{
+        height: 50vh;
+    }
+}
+@media screen and (max-width:769px) {
+    .banner-slider-info{
+        top: 44%;
+    }
+    .slick-slider{
+        display: none;
+    }
+}
+@media screen and (max-width:415px) {
+    .banner{
+        height: 65vh;
+    }
+    .banner-slider-info{
+        display: none;
+    }
+    .banner-slider-image{
+        padding: 0 80px;
+        height: 65vh;
+        margin-left: 14px;
+    }
+}
